@@ -141,8 +141,6 @@ I'm doing the project alone.
 ### Phase 5: Documentation and Presentation
 
 - Complete the README.
-- Create the user manual.
-- Create the implementation manual.
 - Update the UML diagram if necessary.
 - Prepare the final presentation and demonstration.
 

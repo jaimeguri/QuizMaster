@@ -1,4 +1,4 @@
-# QuizMaster - Simple Quiz Application
+# QuizMaster – Disney Quiz Application
 
 ## Project Information
 
@@ -10,150 +10,116 @@
 
 ## Project Description
 
-QuizMaster is a Java-based quiz application that will allow users to answer a series of multiple-choice and true/false questions through a graphical user interface.
+QuizMaster is a completed Java-based Disney trivia application developed using JavaFX and Apache NetBeans.
 
-I chose this project because quiz applications can be useful for studying and reviewing information. The goal is to create a simple and easy-to-use program that allows users to test their knowledge while also demonstrating object-oriented programming concepts.
+The application allows users to answer 10 Disney-themed questions, including multiple-choice and true/false questions, through an interactive graphical user interface.
 
-The user will begin the quiz from the main screen. Questions will appear one at a time with possible answers. The user will select an answer and continue to the next question. The program will determine whether each answer is correct and keep track of the user's score. At the end of the quiz, the user's final score will be displayed.
+I chose this project because quiz applications are useful for testing knowledge while demonstrating object-oriented programming concepts.
 
-The graphical user interface will be created using JavaFX. The project will use object-oriented programming concepts including classes, inheritance, polymorphism, Strings, arrays or lists, conditions, and loops.
+## Main Features
 
-## Classes
+- 10 Disney-themed trivia questions
+- Multiple-choice and true/false questions
+- Soft pink JavaFX graphical user interface
+- Selectable answer buttons
+- Submit Answer and Next Question buttons
+- Immediate correct or incorrect feedback
+- Automatic score tracking
+- Question progress indicator (Question X of 10)
+- Final score displayed out of 10
+- Restart Quiz functionality
 
-### QuizApp
+## Final UML Class Diagram
 
-The `QuizApp` class will start the application and manage the JavaFX graphical user interface.
+<img width="5774" height="5375" alt="Quiz Management Framework-2026-10-07-202552" src="https://github.com/user-attachments/assets/ae3d89a8-bb17-497b-978b-3d408d978e5f" />
 
-**Fields:**
-- Quiz quiz
-- Label questionLabel
-- Button nextButton
-- ToggleGroup answerGroup
+## Application Design
 
-**Methods:**
-- start(Stage stage)
-- displayQuestion()
-- handleAnswer()
-- displayResults()
+The application uses five main Java classes.
+
+### QuizMasterFX
+
+Creates the JavaFX graphical user interface, displays questions and answer choices, handles button actions, updates the progress indicator, and displays the final score.
 
 ### Question
 
-The `Question` class will be the parent class for the different types of questions.
-
-**Fields:**
-- String questionText
-- String correctAnswer
-
-**Methods:**
-- Question(String questionText, String correctAnswer)
-- getQuestionText()
-- getCorrectAnswer()
-- checkAnswer(String answer)
-- getQuestionType()
+The parent class that stores the question text and correct answer. It includes methods for retrieving question information and checking answers.
 
 ### MultipleChoiceQuestion
 
-The `MultipleChoiceQuestion` class will represent questions with multiple answer choices and will inherit from the `Question` class.
-
-**Fields:**
-- String[] choices
-
-**Methods:**
-- MultipleChoiceQuestion(String questionText, String correctAnswer, String[] choices)
-- getChoices()
-- getQuestionType()
-
-**Inheritance:** MultipleChoiceQuestion extends Question
+Extends the Question class and stores an array of possible answers for multiple-choice questions.
 
 ### TrueFalseQuestion
 
-The `TrueFalseQuestion` class will represent questions that can be answered with true or false.
-
-**Methods:**
-- TrueFalseQuestion(String questionText, String correctAnswer)
-- getQuestionType()
-
-**Inheritance:** TrueFalseQuestion extends Question
+Extends the Question class and represents questions with True or False answers.
 
 ### Quiz
 
-The `Quiz` class will manage the questions, the user's progress, and the score.
+Manages the questions, current question index, score tracking, answer submissions, navigation, and restart functionality.
 
-**Fields:**
-- ArrayList<Question> questions
-- int currentQuestion
-- int score
+## Object-Oriented Programming Concepts
 
-**Methods:**
-- addQuestion(Question question)
-- getCurrentQuestion()
-- submitAnswer(String answer)
-- nextQuestion()
-- hasNextQuestion()
-- getScore()
-- getTotalQuestions()
-- resetQuiz()
+QuizMaster demonstrates:
 
-The Quiz class will store both `MultipleChoiceQuestion` and `TrueFalseQuestion` objects as `Question` objects. This will allow the project to demonstrate inheritance and polymorphism.
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Method overriding
+- Strings and arrays
+- ArrayList collections
+- Conditional statements
+- Object-oriented class design
 
-## Initial UML Class Diagram
-<img width="6514" height="5690" alt="Initial UML Class Diagram" src="https://github.com/user-attachments/assets/09e6ad66-2774-4c87-9e67-e580a1b82e06" />
+## How to Run QuizMaster
 
-## Project Plan and Estimated Effort
+1. Open Apache NetBeans.
+2. Open the QuizMaster Maven project.
+3. Make sure Java and Maven are configured.
+4. Run the application using the JavaFX Maven goal `javafx:run`.
+5. The Disney Quiz application window will appear.
 
-I'm doing the project alone.
+**Main application class:** `com.mycompany.quizmaster.QuizMasterFX`
 
-### Phase 1: Planning and Design
+## How to Use the Application
 
-- Plan the main features of the application.
-- Design the classes and relationships.
-- Create the initial UML diagram.
-- Plan the quiz questions and answers.
-- Create the GitHub repository.
+1. Read the Disney trivia question displayed on the screen.
+2. Select an answer.
+3. Click **Submit Answer**.
+4. Review the correct or incorrect feedback.
+5. Click **Next Question**.
+6. Continue until all 10 questions are answered.
+7. View your final score.
+8. Click **Restart Quiz** to play again.
 
-### Phase 2: User Interface and Core Classes
+## Testing
 
-- Create the basic JavaFX interface.
-- Create the Question class.
-- Create the MultipleChoiceQuestion class.
-- Create the TrueFalseQuestion class.
-- Create the Quiz class.
-- Add buttons and answer selections to the GUI.
+The completed application was tested for:
 
-### Phase 3: Application Development
+- Correct and incorrect answers
+- Multiple-choice and true/false questions
+- Score tracking
+- Question navigation
+- Progress indicator updates
+- Final score display
+- Restart functionality
 
-- Connect the GUI to the quiz classes.
-- Add quiz questions and answers.
-- Add answer checking.
-- Add score tracking.
-- Allow the user to move between questions.
-- Display the final score.
-- Add an option to restart the quiz.
+## Challenges and Solutions
 
-### Phase 4: Testing and Improvements
+During development, I encountered JavaFX configuration issues, incorrect package placement, and problems with program structure.
 
-- Test multiple-choice questions.
-- Test true/false questions.
-- Test score calculations.
-- Test different user inputs.
-- Fix errors and improve the interface.
+I resolved these issues by correcting the Maven configuration, organizing the Java classes into the correct packages, and updating the quiz logic.
 
-### Phase 5: Documentation and Presentation
+I also implemented inheritance to support different question types and reset functionality to allow users to restart the quiz.
 
-- Complete the README.
-- Update the UML diagram if necessary.
-- Prepare the final presentation and demonstration.
+## Final Result
 
-**Estimated Total Effort: 15-22 hours**
+QuizMaster is a functional Disney trivia application with a graphical user interface, 10 questions, automatic scoring, answer feedback, question navigation, and restart functionality.
 
-## Project Milestones
+This project helped me apply Java programming concepts, graphical user interface development, inheritance, polymorphism, collections, and object-oriented design.
 
-1. Complete the project design, UML diagram, and basic JavaFX interface.
-2. Complete the Question classes and Quiz class and connect them to the interface.
-3. Complete testing, documentation, GitHub repository, and final presentation.
+## Project Documentation
 
-## Expected Final Result
+The GitHub repository includes the Java source code, user manual, implementation manual, and final UML class diagram.
 
-The completed QuizMaster application will allow a user to start a quiz, answer multiple-choice and true/false questions, move through the questions, and receive a final score.
-
-The project will demonstrate Java programming concepts including object-oriented design, inheritance, polymorphism, Strings, arrays or lists, conditions, loops, UML class design, and JavaFX GUI development.
+**Student:** Jaime Guri  
+**Course:** CSI 2300
